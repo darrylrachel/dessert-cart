@@ -1,0 +1,106 @@
+:root {
+	--black: #000000;
+	--white: #ffffff;
+	--green: #1ea575;
+	--red: #c73b0f;
+	--rose-900: #260f08;
+	--rose-500: #87635a;
+	--rose-400: #ad8a85;
+	--rose-300: #caafa7;
+	--rose-100: #f5eeec;
+	--rose-50: #fcf8f6;
+}
+
+@font-face {
+	font-family: 'Red Hat Regular';
+	src: url(../fonts/static/RedHatText-Regular.ttf);
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Red Hat SemiBold';
+	src: url(../fonts/static/RedHatText-SemiBold.ttf);
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Red Hat Bold';
+	src: url(../fonts/static/RedHatText-Bold.ttf);
+	font-weight: 700;
+	font-style: normal;
+}
+
+/* RESET */
+/* 1. Use a more intuitive box-sizing model */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* 2. Remove default margins for common layout elements */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* 3. Set core body defaults for smooth rendering */
+body {
+	min-height: 100vh;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* 4. Make media elements easier to work with */
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+/* 5. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* 6. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+/* 7. Improve heading text-wrapping */
+h1,
+h2,
+h3,
+h4 {
+	text-wrap: balance;
+}
+
+.btn {
+	background-color: #fff;
+	border: 1px solid var(--rose-400);
+	/* padding: 0px 20px; */
+	border-radius: 60px;
+}

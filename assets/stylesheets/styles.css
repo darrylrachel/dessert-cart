@@ -1,0 +1,102 @@
+@import url(global.css);
+
+body {
+	font-family: 'Red Hat Regular', sans-serif;
+}
+
+.container {
+	width: 100%;
+	padding: 88px 40px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.header h1 {
+	color: var(--rose-900);
+	font-size: 56px;
+	line-height: 120%;
+	letter-spacing: 0px;
+	font-family: 'Red Hat Bold';
+	margin-bottom: 16px;
+}
+
+.item-container {
+	width: 95%;
+	margin-right: 32px;
+	display: flex;
+	flex-direction: column;
+}
+
+.item-wrapper {
+	width: 60%;
+}
+
+.item-card {
+	position: relative;
+	margin-bottom: 160px;
+}
+
+.item-row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.item-img {
+	width: 250px;
+	height: 240px;
+	border-radius: 8px;
+}
+
+.btn {
+	position: absolute;
+	bottom: -18px;
+	left: 50px;
+	font-size: 14px;
+	font-family: 'Red Hat Bold';
+	color: var(--rose-900);
+	text-align: center;
+	width: 160px;
+}
+
+.details {
+	position: absolute;
+	bottom: -108px;
+}
+
+.item-category {
+	color: var(--rose-500);
+	font-size: 14px;
+	line-height: 150%;
+	letter-spacing: 0;
+}
+
+.item-name {
+	color: var(--rose-900);
+	font-size: 16px;
+	line-height: 150%;
+	letter-spacing: 0px;
+}
+
+.item-price {
+	color: var(--red);
+	font-size: 16px;
+	line-height: 150%;
+	letter-spacing: 0px;
+}
+
+.cart-icon {
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+}
+
+.product-button {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+}
