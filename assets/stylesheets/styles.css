@@ -59,6 +59,9 @@ body {
 	color: var(--rose-900);
 	text-align: center;
 	width: 160px;
+	background-color: #fff;
+	border: 1px solid var(--rose-400);
+	border-radius: 60px;
 }
 
 .details {
@@ -97,6 +100,13 @@ body {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: center;
-	padding: 10px;
+	justify-content: space-between;
+	padding: 10px 25px;
 }
+
+/* ACTIVE STILES */
+.active {
+	background-color: var(--red);
+	color: var(--white);
+}
+/* END ACTIVE STILES */
