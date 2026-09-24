@@ -11,9 +11,11 @@ const addToCartButtons = document.querySelectorAll('.add-to-cart')
 const increaseButton = document.createElement('button')
 const decreaseButton = document.createElement('button')
 const cartIcon = 'assets/images/icon-add-to-cart.svg'
+const emptyCart = 'assets/images/illustration-empty-cart.svg'
+
 let cart = []
 
-// Load Products
+// LOAD PRODUCTS
 async function loadData() {
 	// Fetch the file
 	try {
@@ -35,7 +37,7 @@ const products = await loadData()
 
 //=========================================================================
 
-// Render Products
+// RENDER PRODUCTS
 function renderProducts(products) {
 	products.forEach((product) => {
 		const card = document.createElement('div')
@@ -59,11 +61,12 @@ function renderProducts(products) {
 }
 renderProducts(products)
 
-// Create cart button
+// CART BUTTON
 function createCartButton(product) {
 	const button = document.createElement('button')
 	button.classList.add('btn')
 	button.classList.add('product-button')
+	button.classList.add('active')
 	let quantity = 0
 
 	const cartItem = cart.find((item) => item.id === product.id)
@@ -87,7 +90,16 @@ function createCartButton(product) {
 	return button
 }
 
-// modify cart
+// INCREASE & DECREASE QUANTITIES
+increaseButton.addEventListener('click', () => {
+	increaseQuantity(products)
+})
+
+decreaseButton.addEventListener('click', () => {
+	decreaseQuantity(products)
+})
+
+// MODIFY CART: ADD, INCREASE, DECREASE, REMOVE
 function addToCart(product) {
 	cart.push({
 		id: product.id,
@@ -96,19 +108,19 @@ function addToCart(product) {
 		quantity: 1,
 	})
 
+	renderCart(product)
 	renderProducts(products)
 }
 
-// modify cart
 function increaseQuantity(product) {
 	if (cartItem) {
 		cartItem.quantity++
+		console.log(cartItem)
 	}
 
 	renderProducts(products)
 }
 
-// modify cart
 function decreaseQuantity(product) {
 	const cartItem = cart.find((item) => item.id === product.id)
 
@@ -123,33 +135,39 @@ function decreaseQuantity(product) {
 	renderProducts(products)
 }
 
-// modify cart
 function removeFromCart(product) {}
 
-increaseButton.addEventListener('click', () => {
-	increaseQuantity(products)
-})
-
-decreaseButton.addEventListener('click', () => {
-	decreaseQuantity(products)
-})
-
-// CART SCRIPTS
+/////////////////////////////////////////////////////////////////////////
+// CART
 //////////////////////////////////////
 function renderCart(products) {
+	const cartWrapper = document.createElement('div')
 	const title = document.createElement('h3')
 	const subTitle = document.createElement('p')
-	const cartWrapper = document.createElement('div')
+	const emptyCartImg = document.createElement('img')
+	cartWrapper.classList.add('cart-wrapper')
 	title.classList.add('cart-title')
 	subTitle.classList.add('cart-sub-title')
+	emptyCartImg.classList.add('empty-cart-img')
+	let cartHTML = ''
 
-	// console.log('Need this to show in the cart', cart)
-
-	cartWrapper.innerHTML = `
-			<h3 class='cart-title'>Your Cart (Quantity)</h3>
-			<p>Your added items will appear here</p>
-			
+	///////////////////GET THE CART WORKING //////////////////////////////////////
+	if (cart.length === 0) {
+		cartWrapper.innerHTML = `
+			<h3 class='cart-title'>Your Cart (0)</h3>
+			<img class='empty-cart-img' src='${emptyCart}'>
+			<p class='cart-sub-title'>Your added items will appear here</p>
+		`
+	} else {
+		for (const item of cart) {
+			cartHTML += `
+				<p>${item.name}</p>
 			`
+		}
+		cartWrapper.innerHTML = cartHTML
+	}
+	///////////////////GET THE CART WORKING //////////////////////////////////////
+
 	cartContainer.appendChild(cartWrapper)
 }
 renderCart(products)

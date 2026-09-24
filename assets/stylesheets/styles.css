@@ -2,6 +2,7 @@
 
 body {
 	font-family: 'Red Hat Regular', sans-serif;
+	background-color: #fcf8f6;
 }
 
 .container {
@@ -102,6 +103,39 @@ body {
 	align-items: center;
 	justify-content: space-between;
 	padding: 10px 25px;
+}
+
+.cart-container {
+	background-color: #fff;
+	border-radius: 12px;
+	padding: 12px;
+	height: 100%;
+	width: 365px;
+}
+
+.cart-wrapper {
+	/* border: 1px solid red; */
+	margin: 20px;
+}
+
+.cart-title {
+	color: var(--red);
+	font-family: 'Red Hat Bold';
+	/* margin: 24px 0; */
+	font-size: 24px;
+}
+
+.cart-sub-title {
+	color: var(--rose-500);
+	font-family: 'Red Hat SemiBold';
+	font-size: 14px;
+	text-align: center;
+}
+
+.empty-cart-img {
+	width: 128px;
+	height: 128px;
+	margin: 20px auto;
 }
 
 /* ACTIVE STILES */
